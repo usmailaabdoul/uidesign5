@@ -26,8 +26,9 @@ const styles = {
         alignItems: 'center'
     },
     questionTextstyle: {
-        fontSize: 18,
-        fontWeight: '700'
+        fontFamily: "vincHand",
+        fontSize: 27,
+        // fontWeight: '700'
     },
     buttonstyle: {
         justifyContent: 'center',
@@ -39,8 +40,9 @@ const styles = {
         padding: 18
     },
     buttontextstyle: {
-        fontSize: 18,
-        fontWeight: '700',
+        fontFamily: "vincHand",
+        fontSize: 27,
+        // fontWeight: 'bold',
         color: '#fff'
     },
     footerstyle: {
@@ -49,7 +51,8 @@ const styles = {
         alignItems: 'center'
     },
     footerTextstyle: {
-        fontSize: 18,
+        fontFamily: "vincHand",
+        fontSize: 27,
         color: '#00aeef'
     }
 }
