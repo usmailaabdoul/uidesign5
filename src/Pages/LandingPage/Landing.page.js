@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Animated, NativeModules, LayoutAnimation, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Animated, Image, NativeModules, LayoutAnimation, Dimensions } from 'react-native';
 
 import styles from './Landing.style';
 
@@ -8,6 +8,8 @@ const { UIManager } = NativeModules;
 UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
 
 const textArray = [
+    { picture: require('../../../res/images/image2.png'), question: 'Improve your focus while reading', answer1: 'No', answer2: 'Yes' },
+    { picture: require('../../../res/images/image1.png'), question: 'Do you love working in a team', answer1: 'Hell No', answer2: "I dont't Mind" },
     { question: 'She went _____ the store', answer1: 'to', answer2: 'too' },
     { question: 'Is animating in RN easy?', answer1: 'u smoke something if u thing its easy', answer2: "Ano want even answer u" },
     { question: '______ book is this?', answer1: 'Whoos', answer2: "who's" },
@@ -33,7 +35,7 @@ class Landing extends Component {
             this.handleColors()
             this._animatedheight.setValue(0)
             this.animateheight();
-        }, 13000);
+        }, 13700);
     }
     _animatedheight = new Animated.Value(0);
 
@@ -88,7 +90,7 @@ class Landing extends Component {
 
         return (
             <View style={styles.mainstyle}>
-                <View style={{width: '100%', paddingTop: 25, position: 'absolute'}}>
+                <View style={{ width: '100%', paddingTop: 25, position: 'absolute' }}>
                     <View style={{ flexDirection: 'row', marginHorizontal: 20, }}>
                         {this.renderFirstColor()}
                         {this.renderSecondColor()}
@@ -98,20 +100,28 @@ class Landing extends Component {
                 </Animated.View>
                 <View style={styles.mainBodyWrapperstyle}>
                     <View style={styles.bodystyle}>
+                        <View>
+                            <Image
+                                source={textThatChanges.picture}
+                                style={{width: 200, height: 200}}
+                            />
+                        </View>
                         <View style={styles.questionstyle}>
                             <Text style={styles.questionTextstyle}>{textThatChanges.question}</Text>
                         </View>
-                        <TouchableOpacity style={styles.buttonstyle}>
-                            <Text style={styles.buttontextstyle}>{textThatChanges.answer1}</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonstyle}>
-                            <Text style={styles.buttontextstyle}>{textThatChanges.answer2}</Text>
-                        </TouchableOpacity>
+                        <View style={styles.buttonwrapperstyle}>
+                            <TouchableOpacity style={styles.buttonstyle}>
+                                <Text style={styles.buttontextstyle}>{textThatChanges.answer1}</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.buttonstyle}>
+                                <Text style={styles.buttontextstyle}>{textThatChanges.answer2}</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
 
-                    <TouchableOpacity style={styles.footerstyle}>
+                    {/* <TouchableOpacity style={styles.footerstyle}>
                         <Text style={styles.footerTextstyle}>I don't know</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
             </View>
         )

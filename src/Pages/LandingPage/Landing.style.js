@@ -5,7 +5,8 @@ const styles = {
         alignItems: 'center'
     },
     backgroundanimestyle: {
-        backgroundColor: '#ebedf070',
+        backgroundColor: '#ebedf099',
+        // backgroundColor: 'red',
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center'
@@ -18,7 +19,8 @@ const styles = {
     },
     bodystyle: {
         flex: 10, 
-        justifyContent: 'center',   
+        justifyContent: 'center', 
+        alignItems: 'center' 
     },
     questionstyle: {
         marginBottom: 25,
@@ -30,6 +32,14 @@ const styles = {
         fontSize: 27,
         // fontWeight: '700'
     },
+    buttonwrapperstyle: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 10,
+        // padding: 40,
+    },
     buttonstyle: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -37,7 +47,8 @@ const styles = {
         backgroundColor: '#00aeef',
         marginHorizontal: 10,
         borderRadius: 4,
-        padding: 18
+        padding: 18,
+        flexShrink: 1
     },
     buttontextstyle: {
         fontFamily: "vincHand",
